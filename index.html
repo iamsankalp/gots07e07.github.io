@@ -15,22 +15,32 @@
   <link href="reboot.css" rel="stylesheet" type="text/css">
 
   <style>
+
+  html, body {
+    background: #020716;
+    color: #fff;
+  }
     .top-bar {
+      text-align: center;
       height: 60px;
-      background: #f5f5f5;
-      border-bottom: 1px solid #ccc;
+      background: transparent;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
       padding: 18px;
+      overflow: hidden;
     }
 
     .top-bar h2 {
       font-size: 14px;
       font-weight: normal;
+      display: inline-block;
+      float: left;
     }
 
     ul.inline {
       margin: 0 0 1rem;
       padding: 0;
       list-style: none;
+      float: right;
     }
 
     ul.inline li {
@@ -39,6 +49,7 @@
     }
 
     main {
+      margin-top: 2rem;
       text-align: center;
     }
 
@@ -51,6 +62,26 @@
       margin: 0 auto;
     }
 
+    .answer {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20vw;
+    }
+
+    .check {
+      background: #0479aa;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      color: #fff;
+      border-radius: 4px;
+      box-shadow: 0px 2px 12px #0479aa;
+    }
+
+    .check:hover {
+      text-decoration: none;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -58,7 +89,7 @@
 
   <article class="top-bar">
     <h2>
-      http://HasGameofThronesS07E07leakedyet.com/
+      http://HasGameofThronesS07E07LeakedYet.com
     </h2>
 
     <ul class="inline">
@@ -78,9 +109,12 @@
       Has Game of Thrones S07E07 leaked yet?
     </h1>
 
-    <img src="http://placehold.it/600x600">
+    <h3 class="answer">
+      NO!
+    </h3>
 
-    <button>Check again</button>
+    <a class="check" href="javascript:void(0)">Check again</a>
+
   </main>
 </body>
 
