@@ -83,7 +83,7 @@
     .answer {
       text-align: center;
       font-weight: bold;
-      font-size: 20vw;
+      font-size: 200px;
     }
 
     .check {
@@ -99,6 +99,7 @@
     .check:hover {
       text-decoration: none;
       color: #fff;
+      box-shadow: 0px 2px 24px #0479aa;
     }
   </style>
 </head>
@@ -128,12 +129,23 @@
     </h1>
 
     <h3 class="answer">
-      NO!
+      No!
     </h3>
 
     <a class="check" href="javascript:void(0)">Check again</a>
 
   </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script>
+
+  $('.check').click(function(){
+    console.log("ok");
+    $('.answer').html("Nope, still not…");
+  });
+  </script>
 </body>
 
 </html>
