@@ -14,17 +14,35 @@
 
   <link href="reboot.css" rel="stylesheet" type="text/css">
 
-  <style>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  html, body {
-    background: #020716;
-    color: #fff;
-  }
+    ga('create', 'UA-104746956-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <style>
+    html,
+    body {
+      background: #020716;
+      color: #fff;
+    }
+
     .top-bar {
       text-align: center;
       height: 60px;
       background: transparent;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       padding: 18px;
       overflow: hidden;
     }
