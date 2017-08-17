@@ -128,21 +128,24 @@
       margin-right: 0;
     }
 
-    .facebook, .twitter {
+    .facebook,
+    .twitter {
       font-size: 0.6rem;
       font-weight: 500;
       padding: 0.5rem;
       border-radius: 4px;
       color: #fff;
       margin-top: 2px;
-      text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
     }
 
-    .facebook:hover, .twitter:hover {
+    .facebook:hover,
+    .twitter:hover {
       color: #fff;
     }
 
-    .facebook > svg, .twitter > svg {
+    .facebook>svg,
+    .twitter>svg {
       display: inline;
       margin-bottom: -0.4rem;
     }
@@ -176,12 +179,22 @@
       line-height: 1.3;
     }
 
+    .answer-wrapper {
+      min-height: 5rem;
+    }
+
     .answer {
       line-height: 1.2;
-      margin: 4rem 0;
+      margin: 2rem 0;
       font-size: 3rem;
       will-change: font-size;
       transition: font-size 0.3s ease-out;
+    }
+
+    .raven {
+      height: 150px;
+      transform: scaleX(-1);
+      filter: fliph;
     }
 
     .check.button {
@@ -245,7 +258,7 @@
   <div class="wrapper">
 
     <article class="top-bar">
-      <h2 class="url" title="Copy raven">
+      <h2 class="url" title="Copy URL" onclick="copyToClipboard('.show-for-large')">
         <span class="show-for-small">Copy URL</span>
         <span class="show-for-large">http://HasGameofThronesS07E07LeakedYet.com</span>
       </h2>
@@ -276,9 +289,14 @@
         has game of thrones s07e07 leaked yet?
       </h1>
 
-      <h3 class="answer">
-        no
-      </h3>
+
+      <div class="answer-wrapper">
+        <h3 class="answer">
+          no
+        </h3>
+
+        <img class="raven" src="images/raven.gif" style="display:none;">
+      </div>
 
       <a class="check button" href="javascript:void(0)" title="Bend the knee">check new ravens</a>
 
@@ -297,6 +315,8 @@
 
 
   <script>
+    // Randomizer
+
     var initialMessages = [
       "No, not yet…",
       "Nah ¯\\(°_o)/¯",
@@ -354,8 +374,26 @@
           break;
       }
       console.log("Ser, checked you have console. Easily. Ably.")
-      $('.answer').html(answerText);
+      // $('.answer').html(answerText);
+
+      $('.raven').show();
+      $('.answer').hide();
+      $('.raven').fadeOut(2000, function(){
+        $('.answer').show();
+        $('.answer').html(answerText);
+      });
     });
+
+    // Copy URL Function
+
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+
   </script>
 </body>
 
