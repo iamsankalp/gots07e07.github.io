@@ -47,7 +47,7 @@
     }
 
     .wrapper {
-      background: #fff;
+      background-color: #fff;
       min-height: 100%;
       height: auto !important; // the magic!
       height: 100%;
@@ -61,7 +61,7 @@
     }
 
     footer {
-      background: #f5f5f5;
+      background-color: #f5f5f5;
       margin-top: 20px;
       height: 60px;
       border-top: 1px solid #ebebeb;
@@ -88,17 +88,28 @@
 
     .top-bar {
       margin: 0.25rem auto 0 auto;
-      padding: 1rem 2rem;
+      padding: 1rem;
       border-bottom: 1px solid #ebebeb;
       overflow: hidden;
       text-align: center;
     }
 
-    .top-bar h2 {
+    .show-for-large {
+      display: none;
+    }
+
+    .url {
+      border: 1px solid #000;
       font-size: 1rem;
+      padding: 0.5rem;
       font-weight: normal;
       display: inline-block;
       float: left;
+      cursor: pointer;
+    }
+
+    .url:hover {
+      background-color: #fafafa;
     }
 
     ul.inline {
@@ -110,17 +121,52 @@
 
     ul.inline li {
       display: inline-block;
-      margin: 0 1rem 0 0;
+      margin: 0.5rem 1rem 0 0;
     }
 
     ul.inline li:last-child {
       margin-right: 0;
     }
+
+    .facebook, .twitter {
+      font-size: 0.6rem;
+      font-weight: 500;
+      padding: 0.5rem;
+      border-radius: 4px;
+      color: #fff;
+      margin-top: 2px;
+      text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    }
+
+    .facebook:hover, .twitter:hover {
+      color: #fff;
+    }
+
+    .facebook > svg, .twitter > svg {
+      display: inline;
+      margin-bottom: -0.4rem;
+    }
+
+    .facebook {
+      background-color: #4267b2;
+    }
+
+    .facebook:hover {
+      background-color: #365899;
+    }
+
+    .twitter {
+      background-color: #1b95e0;
+    }
+
+    .twitter:hover {
+      background-color: #0c7abf;
+    }
     /* MAIN */
 
     main {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       margin: 2rem auto;
     }
 
@@ -131,8 +177,9 @@
     }
 
     .answer {
-      margin: 2rem 0;
-      font-size: 5rem;
+      line-height: 1.2;
+      margin: 4rem 0;
+      font-size: 3rem;
       will-change: font-size;
       transition: font-size 0.3s ease-out;
     }
@@ -141,31 +188,55 @@
       display: inline-block;
       margin: 2rem 0;
       font-size: 1rem;
-      background: #000;
+      background-color: #000;
       padding: 1rem 2rem 1.1rem 2rem;
       color: #fff;
-      transition: background 0.2s ease-out;
-      will-change: background;
+      transition: background-color 0.2s ease-out;
+      will-change: background-color;
     }
 
     .check.button:hover {
-      background: #555;
+      background-color: #555;
     }
-
-
     /* MEDIA QUERY */
 
     @media only screen and (min-width:960px) {
-      main,
+
       .top-bar {
         max-width: 80vw;
+        padding: 1rem 2rem;
+      }
+
+      .show-for-large {
+        display: inline-block;
+      }
+
+      .show-for-small {
+        display: none;
+      }
+
+      main {
+        max-width: 80vw;
+        padding-left: 2rem;
+        padding-right: 2rem;
       }
 
       .answer {
-        font-size: 12vw;
+        font-size: 8vw;
         margin-left: -0.5rem;
       }
     }
+
+    @media only screen and (min-width:1200px) {
+      .answer {
+        font-size: 6vw;
+      }
+    }
+    /*@media only screen and (min-width:1600px) {
+      .answer {
+        font-size: 6vw;
+      }
+    }*/
   </style>
 </head>
 
@@ -174,17 +245,28 @@
   <div class="wrapper">
 
     <article class="top-bar">
-      <h2>
-        http://HasGameofThronesS07E07LeakedYet.com
+      <h2 class="url" title="Copy raven">
+        <span class="show-for-small">Copy URL</span>
+        <span class="show-for-large">http://HasGameofThronesS07E07LeakedYet.com</span>
       </h2>
 
       <ul class="inline">
         <li>
-          <a href="#">Twitter</a>
+          <a class="twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2FHasGameofThronesS07E07LeakedYet.com&via=sankalped%2C%20%40primekrieger&text=Has%20GOT%20S07E07%20leaked%20yet%3F%20Check%20here%3A%20&hashtags=GameOfThrones">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+              <path fill="#fff" d="M17.17 6.16v.48c0 1.22-.23 2.46-.7 3.7-.45 1.25-1.12 2.38-2 3.4-.9 1-2 1.82-3.3 2.45-1.3.63-2.8.95-4.5.95-1.06 0-2.06-.15-3-.44C2.7 16.43 1.8 16 1 15.5c.14 0 .28 0 .43.02.15.02.3.02.45.02.87 0 1.7-.14 2.46-.42.78-.28 1.5-.67 2.12-1.16-.8-.02-1.5-.26-2.14-.74-.64-.48-1.07-1.08-1.3-1.82.1.02.22.04.34.04h.85l.5-.1c-.85-.18-1.56-.6-2.12-1.28C2 9.38 1.73 8.6 1.73 7.7c.24.1.5.2.8.28.28.1.57.14.86.15-.5-.33-.9-.77-1.2-1.3-.3-.55-.45-1.14-.45-1.78 0-.34.04-.67.13-.98.1-.32.22-.6.38-.87.45.56.95 1.06 1.52 1.52.57.45 1.17.84 1.82 1.18.64.34 1.32.6 2.04.8.72.2 1.46.32 2.23.36-.04-.14-.07-.28-.08-.42l-.03-.42c0-.5.1-1 .3-1.45.18-.45.44-.84.78-1.17.34-.33.73-.6 1.18-.8.44-.2.92-.3 1.43-.3.15 0 .3.02.43.03.37.05.72.14 1.06.3.46.2.86.5 1.2.85.4-.08.82-.2 1.22-.35.4-.15.77-.33 1.12-.53-.14.42-.35.8-.63 1.15-.28.35-.6.64-1 .87.38-.04.74-.1 1.1-.2.35-.1.7-.22 1.03-.37-.24.37-.52.72-.83 1.04-.3.3-.65.6-1 .86z"/>
+            </svg>
+            <span class="brand">Tweet</span>
+          </a>
         </li>
 
         <li>
-          <a href="#">Facebook</a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//HasGameofThronesS07E07LeakedYet.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+              <path fill="#fff" d="M16.2 2H3.8c-.5 0-.93.18-1.28.53C2.17 2.88 2 3.3 2 3.8v12.43c0 .5.17.9.52 1.25S3.3 18 3.8 18H10v-6.2H8.23V9.57H10V7.76c0-.96.27-1.75.82-2.36.55-.6 1.4-.92 2.53-.92h1.6V6.8H13.9c-.45 0-.76.14-.95.4-.18.3-.28.57-.28.87v1.5h2.28l-.5 2.22h-1.78V18h3.54c.5 0 .93-.17 1.28-.52s.52-.76.52-1.25V3.8c0-.5-.17-.92-.52-1.27S16.7 2 16.2 2z"/>
+            </svg>
+            <span class="brand">Share</span>
+          </a>
         </li>
       </ul>
     </article>
@@ -215,9 +297,64 @@
 
 
   <script>
+    var initialMessages = [
+      "No, not yet…",
+      "Nah ¯\\(°_o)/¯",
+      "No!",
+      "Nope :("
+    ]
+
+    var firstCheckMessages = [
+      "Nope, still not…",
+      "Nope, your request to leak has been registered though!",
+      "Wait... I found a date. 27th of Tarth... err, of August.",
+      "42% leaked..."
+    ]
+
+    var secondCheckMessages = [
+      "You’re impatient, aren’t you!?",
+      "That button is not a plaything!",
+      "We know nothing!",
+      "Yes? No? NO."
+    ]
+
+    var thirdCheckAndBeyondMessages = [
+      "If you do that again, a dire wolf will die!",
+      "No! Go away now.",
+      "God NO!",
+      "No! Hit it again and I’ll post a spoiler for next season (╬ ಠ益ಠ)",
+      "No! Theon Greyjoy will sit on the Iron Throne coz your repeated hitting of this button has altered the timeline.",
+      "For the last time, NO! And thanks to you, I’ve killed two of Dany’s dragons.",
+      "ヽ༼ ಠ益ಠ ༽ﾉ",
+      "YES!!! Oh, wait... it's still a no :("
+    ]
+
+    var initialMessage = initialMessages[getRandomInt(0, initialMessages.length - 1)];
+    $('.answer').html(initialMessage);
+
+    var count = 0;
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     $('.check').click(function() {
-      console.log("ok");
-      $('.answer').html("Nope, still not…");
+      var answerText
+      count += 1;
+
+      switch (count) {
+        case 1:
+          answerText = firstCheckMessages[getRandomInt(0, firstCheckMessages.length - 1)];
+          break;
+        case 2:
+          answerText = secondCheckMessages[getRandomInt(0, secondCheckMessages.length - 1)];
+          break;
+        default:
+          answerText = thirdCheckAndBeyondMessages[getRandomInt(0, thirdCheckAndBeyondMessages.length - 1)];
+          break;
+      }
+      console.log("Ser, checked you have console. Easily. Ably.")
+      $('.answer').html(answerText);
     });
   </script>
 </body>
