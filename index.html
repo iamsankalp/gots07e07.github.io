@@ -34,15 +34,55 @@
   <style>
     html,
     body {
-      background: #020716;
-      color: #fff;
+      height: 100%;
+    }
+
+    a, a:hover, a:visited {
+      text-decoration: none;
+    }
+
+    .wrapper {
+      background: #fff;
+      min-height: 100%;
+      height: auto !important; // the magic!
+      height: 100%;
+      margin-bottom: -80px; // the height of our footer + margin
+    }
+
+    .footer-push {
+      clear: both;
+      height: 80px; // the height of our footer + margin
+    }
+
+    footer {
+      background: rgba(0,0,0,0.03);
+      margin-top: 20px;
+      height: 60px;
+      border-top: 1px solid #ebebeb;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .cite {
+      display: inline-block;
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .character {
+      height: 40px;
+      display: inline-block;
+      margin-top: -2px;
+      margin-right: -30px;
+      transform: scaleX(-1);
+      filter: fliph;
     }
 
     .top-bar {
       text-align: center;
       height: 60px;
       background: transparent;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       padding: 18px;
       overflow: hidden;
     }
@@ -68,7 +108,14 @@
 
     main {
       margin-top: 2rem;
-      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      /*text-align: center;*/
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 300;
     }
 
     img {
@@ -81,19 +128,19 @@
     }
 
     .answer {
-      text-align: center;
+      /*text-align: center;*/
       font-weight: bold;
       font-size: 200px;
     }
 
     .check {
-      background: #0479aa;
+      background: #000;
       padding: 1rem 2rem;
       text-decoration: none;
       transition: all 0.3s ease;
       color: #fff;
       border-radius: 4px;
-      box-shadow: 0px 2px 12px #0479aa;
+      /*box-shadow: 0px 2px 12px #0479aa;*/
     }
 
     .check:hover {
@@ -106,45 +153,52 @@
 
 <body>
 
-  <article class="top-bar">
-    <h2>
-      http://HasGameofThronesS07E07LeakedYet.com
-    </h2>
+  <div class="wrapper">
+    <article class="top-bar">
+      <h2>
+        http://HasGameofThronesS07E07LeakedYet.com
+      </h2>
 
-    <ul class="inline">
-      <li>
-        <a href="#">Twitter</a>
-      </li>
+      <ul class="inline">
+        <li>
+          <a href="#">Twitter</a>
+        </li>
 
-      <li>
-        <a href="#">Facebook</a>
-      </li>
-    </ul>
+        <li>
+          <a href="#">Facebook</a>
+        </li>
+      </ul>
 
-  </article>
+    </article>
 
-  <main>
-    <h1>
-      Has Game of Thrones S07E07 leaked yet?
-    </h1>
+    <main>
+      <h1 class="title">
+        has game of thrones s07e07 leaked yet?
+      </h1>
 
-    <h3 class="answer">
-      No!
-    </h3>
+      <h3 class="answer">
+        no
+      </h3>
 
-    <a class="check" href="javascript:void(0)">Check again</a>
+      <a class="check" href="javascript:void(0)">check again</a>
 
-  </main>
+    </main>
+
+    <div class="footer-push"></div>
+  </div>
+
+  <footer>
+    <img class="character" src="images/charizard.gif"> <p class="cite">Forged in Dragonfire by <a href="https://twitter.com/primekrieger">@primekrieger</a> and <a href="https://twitter.com/sankalped">@sankalped</a></p>
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
   <script>
-
-  $('.check').click(function(){
-    console.log("ok");
-    $('.answer').html("Nope, still not…");
-  });
+    $('.check').click(function() {
+      console.log("ok");
+      $('.answer').html("Nope, still not…");
+    });
   </script>
 </body>
 
