@@ -133,6 +133,8 @@
     .answer {
       margin: 2rem 0;
       font-size: 5rem;
+      will-change: font-size;
+      transition: font-size 0.3s ease-out;
     }
 
     .check.button {
@@ -161,6 +163,7 @@
 
       .answer {
         font-size: 12vw;
+        margin-left: -0.5rem;
       }
     }
   </style>
@@ -195,7 +198,7 @@
         no
       </h3>
 
-      <a class="check button" href="javascript:void(0)">check again</a>
+      <a class="check button" href="javascript:void(0)" title="Bend the knee">check new ravens</a>
 
     </main>
 
