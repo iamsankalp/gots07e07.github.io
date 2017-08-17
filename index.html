@@ -140,10 +140,63 @@
 
 
   <script>
+  var initialMessages = [
+    "No, not yet…",
+    "Nah ¯\\(°_o)/¯",
+    "No!",
+    "Nope :("
+  ]
+
+  var firstCheckMessages = [
+    "Nope, still not…",
+    "Nope, your request to leak has been registered though!",
+    "Wait... I found a date. 27th of Tarth... err, of August.",
+    "42% leaked..."
+  ]
+
+  var secondCheckMessages = [
+    "You’re impatient, aren’t you!?",
+    "That button is not a plaything!",
+    "We know nothing!",
+    "Yes? No? NO."
+  ]
+
+  var thirdCheckAndBeyondMessages = [
+    "If you do that again, a dire wolf will die!",
+    "No! Go away now.",
+    "God NO!",
+    "No! Hit it again and I’ll post a spoiler for next season (╬ ಠ益ಠ)",
+    "No! Theon Greyjoy will sit on the Iron Throne coz your repeated hitting of this button has altered the timeline.",
+    "For the last time, NO! And thanks to you, I’ve killed two of Dany’s dragons.",
+    "ヽ༼ ಠ益ಠ ༽ﾉ",
+    "YES!!! Oh, wait... it's still a no :("
+  ]
+
+  var initialMessage = initialMessages[getRandomInt(0, initialMessages.length - 1)];
+  $('.answer').html(initialMessage);
+
+  var count = 0;
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
   $('.check').click(function(){
+    var answerText
+    count += 1;
+
+    switch (count) {
+      case 1:
+      answerText = firstCheckMessages[getRandomInt(0, firstCheckMessages.length - 1)];
+      break;
+      case 2:
+      answerText = secondCheckMessages[getRandomInt(0, secondCheckMessages.length - 1)];
+      break;
+      default:
+      answerText = thirdCheckAndBeyondMessages[getRandomInt(0, thirdCheckAndBeyondMessages.length - 1)];
+      break;
+    }
     console.log("ok");
-    $('.answer').html("Nope, still not…");
+    $('.answer').html(answerText);
   });
   </script>
 </body>
