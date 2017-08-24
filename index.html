@@ -306,13 +306,13 @@
 
       <div class="answer-wrapper">
         <h3 class="answer">
-          No!
+          Yes!
         </h3>
 
         <img class="raven" src="images/raven.gif" style="display:none;">
       </div>
 
-      <a class="check button" href="javascript:void(0)" title="Bend the knee" onclick="ga('send', 'event', 'Button', 'Click', 'Check');">send ravens to check again</a>
+      <a class="check button" href="javascript:void(0)" title="Bend the knee" onclick="ga('send', 'event', 'Button', 'Click', 'Check');">check ravens again?</a>
 
     </main>
 
@@ -333,37 +333,36 @@
     // Randomizer
 
     var initialMessages = [
-      "No, not yet…",
-      "Nah ¯\\(°_o)/¯",
-      "No!",
-      "Nope :("
+      "Yep, just now…",
+      "Aye ʘ‿ʘ",
+      "Yes!",
+      "Yep :)"
     ]
 
     var firstCheckMessages = [
-      "Nope, still not…",
-      "Nope, your request to leak has been registered though!",
-      "Wait... I found a date. 27th of Tarth... err, of August.",
-      "42% leaked..."
+      "Yes, but what the f**k are you doing here?",
+      "Wait... No. Okay kidding... yes, leaked.",
+      "100% leaked..."
     ]
 
     var secondCheckMessages = [
-      "You’re impatient, aren’t you!?",
-      "That button is not a plaything!",
-      "We know nothing!",
-      "Yes? No? NO."
+      "You don't trust ravens, do you!?",
+      "You want spoilers? Go watch.",
+      "Let's play the Game of Faces. Yes, it's leaked.",
+      "No? Yes? YES."
     ]
 
     var thirdCheckAndBeyondMessages = [
-      "If you do that again, a direwolf will die!",
-      "No! Go away now.",
-      "God NO!",
-      "No! Hit it again and I’ll post a spoiler for next season<br>(╬ ಠ益ಠ)",
-      "No! Theon Greyjoy will sit on the Iron Throne coz your repeated hitting of the button has altered the timeline.",
-      "For the last time, NO! And by harnessing the energy of your button clicks, the Night King has killed two of Dany’s dragons.",
-      "ヽ༼ ಠ益ಠ ༽ﾉ",
-      "YES!!! Oh, wait... it's still a no :(",
-      "Wait... I found a date. 27th of Tarth... err, of August.",
-      "Yes? No? NO."
+      "If you do that again, next raven will be a spoiler!",
+      "Yes! Go away now.",
+      "God YES!",
+      "Yes! Hit it again and I’ll post a spoiler",
+      "Yes! Winter is really here.",
+      "For the last time, YES! And by harnessing the energy of your button clicks, the Night King has [SPOILER HERE].",
+      "ಠ_ಠ",
+      "NO!!! Oh, wait... it's still a yes :)",
+      "You ser, watch it when it airs officially. Ok?",
+      "No? Yes? YES."
     ]
 
     var initialMessage = initialMessages[getRandomInt(0, initialMessages.length - 1)];
