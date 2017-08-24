@@ -32,13 +32,31 @@
     ga('send', 'pageview');
   </script>
 
+  <!--Push notification -->
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "3cbb2954-220d-4f2b-a264-5ddd0056848c",
+      autoRegister: false,
+      /* Set to true to automatically prompt visitors */
+      httpPermissionRequest: {
+        enable: true
+      },
+      notifyButton: {
+        enable: true /* Set to false to hide */
+      },
+      persistNotification: false // Automatically dismiss the notification after ~20 seconds in Chrome Deskop v47+
+    }]);
+  </script>
+
   <style>
     /* GLOBAL */
 
     html {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
-      -webkit-tap-highlight-color: rgba(0,0,0, .1);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
       text-rendering: optimizeLegibility;
       -webkit-text-size-adjust: 100%;
       -moz-text-size-adjust: 100%;
@@ -322,8 +340,8 @@
 
   <footer>
     <img class="character" src="images/charizard.gif">
-    <p class="cite">Forged in Dragonfire by <a href="https://twitter.com/primekrieger" target="_blank" title="Your king commands you." onclick="ga('send', 'event', 'Link', 'Click', 'Diwakar');">@primekrieger</a> and <a href="https://twitter.com/sankalped" target="_blank" title="Ser, you are a learned man."
-        onclick="ga('send', 'event', 'Link', 'Click', 'Sankalp');">@sankalped</a></p>
+    <p class="cite">Forged in Dragonfire by <a href="https://twitter.com/primekrieger" target="_blank" title="Your king commands you." onclick="ga('send', 'event', 'Link', 'Click', 'Diwakar');">@primekrieger</a> and <a href="https://twitter.com/sankalped" target="_blank"
+        title="Ser, you are a learned man." onclick="ga('send', 'event', 'Link', 'Click', 'Sankalp');">@sankalped</a></p>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
